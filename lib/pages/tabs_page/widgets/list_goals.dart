@@ -16,6 +16,9 @@ class ListGoals extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: Wrap(
+          /* direction: Axis.vertical,
+          spacing: 10,
+          runSpacing: 10, */
           children: GoalInfo.generateGoalsInfo()
               .map((goal) => CardGoal(
                     goal,

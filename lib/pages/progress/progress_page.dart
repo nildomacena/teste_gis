@@ -189,10 +189,13 @@ class ProgressPage extends StatelessWidget {
             height: 20,
           ),
           Container(
+            height: 200,
             width: MediaQuery.of(context).size.width,
-            padding: const EdgeInsets.symmetric(horizontal: 60),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            alignment: Alignment.center,
+            child: ListView(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
               children: [
                 percentageProgress(label: 'Mon', percentage: .8),
                 percentageProgress(label: 'Tue', percentage: 1),

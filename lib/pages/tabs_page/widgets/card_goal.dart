@@ -9,59 +9,67 @@ class CardGoal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(10),
+    return SizedBox(
       height: 200,
-      decoration: BoxDecoration(
-          color: goalInfo.color, borderRadius: BorderRadius.circular(20)),
-      width: MediaQuery.of(context).size.width * .4,
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          borderRadius: BorderRadius.circular(20),
-          onTap: onTap,
-          child: Stack(
-            fit: StackFit.expand,
-            children: [
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                alignment: Alignment.center,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 50,
-                      child: Image.asset('assets/goals/${goalInfo.image}.png'),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(top: 10),
-                      child: Text(
-                        goalInfo.title,
-                        style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white),
+      width: MediaQuery.of(context).size.width * .5,
+      child: Container(
+        margin: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+            color: goalInfo.color, borderRadius: BorderRadius.circular(20)),
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            borderRadius: BorderRadius.circular(20),
+            onTap: onTap,
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  alignment: Alignment.center,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 50,
+                        child:
+                            Image.asset('assets/goals/${goalInfo.image}.png'),
                       ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(top: 10),
-                      child: Text(
-                        goalInfo.frequency,
-                        style: const TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w300,
-                            color: Colors.white),
+                      Container(
+                        margin: const EdgeInsets.only(top: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        alignment: Alignment.center,
+                        child: Text(
+                          goalInfo.title,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white),
+                        ),
                       ),
-                    ),
-                  ],
+                      Container(
+                        margin: const EdgeInsets.only(top: 10),
+                        alignment: Alignment.center,
+                        child: Text(
+                          goalInfo.frequency,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Positioned(
-                top: 5,
-                right: 5,
-                child: goalInfo.moreActions,
-              )
-            ],
+                Positioned(
+                  top: 5,
+                  right: 5,
+                  child: goalInfo.moreActions,
+                )
+              ],
+            ),
           ),
         ),
       ),
